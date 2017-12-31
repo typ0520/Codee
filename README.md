@@ -11,7 +11,7 @@ Codee is an github android client app written using kotlin
 - [x] ✅ Github OAuth
 - [x] ✅ Show News
 - [x] ✅ Show yourself or other users of the repositories (owned | starred | trending)
-- [x] ✅ Show events (Watch | PullRequest | Fork | Follow | Delete | Create | CommitComment | IssueComment | Issue ...)
+- [x] ✅ Show events (Watch | PullRequest | Fork | Follow | Delete | Create | Issue ...)
 - [x] ✅ Show user or the repository event
 - [x] ✅ Search repos and users
 - [x] ✅ Show user details
@@ -21,7 +21,7 @@ Codee is an github android client app written using kotlin
 
 ## TODO
 
-- [ ] Support ForkApplyEvent GistEvent GollumEvent MemberEvent PullRequestReviewCommentEvent PushEvent TeamAddEvent
+- [ ] Support ForkApplyEvent MemberEvent PullRequestReviewCommentEvent PushEvent TeamAddEvent
 - [ ] Follow or unfollow user
 - [ ] Star or unstar repository
 - [ ] Show issue details
