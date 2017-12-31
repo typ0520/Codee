@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="actionBarSize">48dp</dimen>
+    <dimen name="loadmore_footer_height">45dp</dimen>
+</resources>

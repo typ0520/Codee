@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:titleTextAppearance="@style/ActionbarTitle"
+            app:navigationIcon="@drawable/ic_drawer_home"/>
+
+        <info.hoang8f.android.segmented.SegmentedGroup
+            android:id="@+id/sg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:orientation="horizontal"
+            app:sc_border_width="1dp"
+            app:sc_corner_radius="10dp"
+            app:sc_tint_color="#ffffff"
+            app:sc_checked_text_color="#000000"
+            android:gravity="center">
+
+            <RadioButton
+                android:id="@+id/btn_repo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Repositories"
+                style="@style/RadioButton"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/btn_users"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Users"
+                style="@style/RadioButton" />
+
+        </info.hoang8f.android.segmented.SegmentedGroup>
+
+        <android.support.v7.widget.SearchView
+            style="@style/MySearchView"
+            android:id="@+id/search_View"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Hello World!"
+            android:layout_marginTop="4dp"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:background="#fff" />
+</LinearLayout>

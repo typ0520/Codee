@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.github.typ0520.codee">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".CodeeApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".ui.activity.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ui.activity.MainActivity"
+            android:theme="@style/ActivityTheme"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask" />
+
+        <activity android:name=".ui.activity.AuthorizeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityTheme"
+            android:launchMode="singleTask" />
+
+        <activity android:name=".ui.activity.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityTheme"
+            android:launchMode="singleTask" />
+
+        <activity android:name=".ui.activity.UsersActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityTheme" />
+
+        <activity android:name=".ui.activity.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityTheme" />
+
+        <activity android:name=".ui.activity.RepositoryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityTheme" />
+
+        <activity android:name=".ui.activity.RepositoriesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityTheme" />
+
+        <activity android:name=".ui.activity.MarkdownActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityTheme" />
+
+        <activity android:name=".ui.activity.EventsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityTheme" />
+
+        <activity android:name=".ui.activity.IssuesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ActivityTheme" />
+    </application>
+</manifest>

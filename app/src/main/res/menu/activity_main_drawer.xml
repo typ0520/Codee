@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/group_item_profile"
+            android:title="Profile" />
+
+        <item
+            android:id="@+id/group_item_notis"
+            android:title="Notifications" />
+
+        <item
+            android:id="@+id/group_item_news"
+            android:title="News" />
+
+        <item
+            android:id="@+id/group_item_issues"
+            android:title="Issues" />
+
+        <item
+            android:id="@+id/group_item_events"
+            android:title="Events" />
+
+        <item
+            android:id="@+id/group_item_settings"
+            android:title="Settings" />
+
+        <item android:title="Repositories">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/group_item_owned"
+                        android:title="Owned" />
+
+                    <item
+                        android:id="@+id/group_item_starred"
+                        android:title="Starred" />
+
+                    <item
+                        android:id="@+id/group_item_trending"
+                        android:title="Trending" />
+
+                    <item
+                        android:id="@+id/group_item_search"
+                        android:title="Search" />
+                </group>
+            </menu>
+        </item>
+    </group>
+</menu>

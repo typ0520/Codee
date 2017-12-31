@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Codee</string>
+
+    <string name="fine_no_data">no data.</string>
+    <string name="something_is_wrong">Something is wrong.</string>
+    <string name="click_me_to_retry">click me to retry!</string>
+</resources>

@@ -1,0 +1,75 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.github.typ0520.codee"
+        minSdkVersion 16
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField 'String', 'CLIENT_ID', "\"$CLIENT_ID\""
+        buildConfigField 'String', 'CLIENT_SECRET', "\"$CLIENT_SECRET\""
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main.java.srcDirs = ['src/main/java','src/main/kotlin']
+        test.java.srcDirs = ['src/test/java','src/test/kotlin']
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.json:json:20171018'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    //noinspection GradleCompatible,GradleDependency
+    implementation "com.android.support:appcompat-v7:$supportVersion"
+    //noinspection GradleCompatible,GradleDependency
+    implementation "com.android.support:design:$supportVersion"
+
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:3.8.0"
+    
+    implementation "io.reactivex.rxjava2:rxkotlin:2.2.0"
+    implementation "io.reactivex.rxjava2:rxandroid:2.0.1"
+
+    implementation "com.trello.rxlifecycle2:rxlifecycle-android-lifecycle-kotlin:$rxlifecycleVersion"
+    implementation "com.trello.rxlifecycle2:rxlifecycle-components:$rxlifecycleVersion"
+
+    implementation ("com.github.bumptech.glide:glide:$glideVersion", {
+        exclude group: 'com.android.support', module: 'support-fragment'
+    })
+    kapt "com.github.bumptech.glide:compiler:$glideVersion"
+
+    implementation 'com.elvishew:xlog:1.4.0'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    implementation 'com.bigkoo:svprogresshud:1.0.6'
+    implementation 'com.orhanobut:hawk:2.0.1'
+    implementation 'com.kingja.loadsir:loadsir:1.3.2'
+
+    kapt 'com.zhy.fabridge:fabridge-compiler:1.0.0'
+    implementation 'com.zhy.fabridge:fabridge-api:1.0.0'
+
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.4'
+    implementation 'com.github.sososeen09:MultiTypeJsonParser:0.1.2'
+    implementation 'com.github.tiagohm.MarkdownView:library:0.17.0'
+    implementation 'info.hoang8f:android-segmented:1.0.6'
+}

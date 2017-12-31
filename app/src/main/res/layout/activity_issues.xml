@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextAppearance="@style/ActionbarTitle"
+        app:navigationIcon="@mipmap/ic_arrow_back_white"
+        app:title="Issues"/>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/sg">
+
+        <com.scwang.smartrefresh.header.StoreHouseHeader
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:shhText="@string/app_name"
+            app:shhLineWidth="2dp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:background="#fff" />
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/loadmore_footer_height"
+            app:srlAccentColor="#888"
+            app:srlClassicsSpinnerStyle="Translate"
+            app:srlDrawableProgress="@drawable/ic_progress_hojder"/>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <info.hoang8f.android.segmented.SegmentedGroup
+        android:id="@+id/sg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:orientation="horizontal"
+        app:sc_border_width="1dp"
+        app:sc_corner_radius="10dp"
+        app:sc_tint_color="#6f6d78"
+        app:sc_checked_text_color="#f5f3fe"
+        android:layout_alignParentBottom="true">
+
+        <RadioButton
+            android:id="@+id/btn_open"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Open"
+            style="@style/RadioButton"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/btn_closed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Closed"
+            style="@style/RadioButton" />
+
+        <RadioButton
+            android:id="@+id/btn_mine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Mine"
+            style="@style/RadioButton" />
+    </info.hoang8f.android.segmented.SegmentedGroup>
+</RelativeLayout>

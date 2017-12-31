@@ -1,0 +1,110 @@
+package com.github.typ0520.codee.mvp.bean.payload
+
+import com.github.typ0520.codee.mvp.bean.User
+import com.github.typ0520.codee.mvp.bean.Organization
+
+/**
+ * Created by tong on 2017/12/26.
+ */
+
+/**
+ * Triggered when a user is added, removed, or invited to an Organization.
+ * Events of this type are not visible in timelines. These events are only used to trigger organization hooks.
+ *
+ * https://developer.github.com/v3/activity/events/types/#organizationevent
+ */
+data class OrganizationPayload(
+		val action: String, //member_invited
+		val invitation: Invitation,
+		val membership: Membership,
+		val organization: Organization,
+		val sender: User
+): Payload() {
+    companion object {
+        val TYPE_NAME = "OrganizationEvent"
+    }
+}
+
+data class Membership(
+		val url: String, //https://api.github.com/orgs/baxterandthehackers/memberships/baxterthehacker
+		val state: String, //active
+		val role: String, //member
+		val organization_url: String, //https://api.github.com/orgs/baxterandthehackers
+		val user: User
+)
+
+data class Invitation(
+		val id: Int, //3294302
+		val login: String, //baxterthehacker
+		val email: Any, //null
+		val role: String //direct_member
+)
+
+/*
+{
+  "action": "member_invited",
+  "invitation": {
+    "id": 3294302,
+    "login": "baxterthehacker",
+    "email": null,
+    "role": "direct_member"
+  },
+  "membership": {
+    "url": "https://api.github.com/orgs/baxterandthehackers/memberships/baxterthehacker",
+    "state": "active",
+    "role": "member",
+    "organization_url": "https://api.github.com/orgs/baxterandthehackers",
+    "user": {
+      "login": "baxterthehacker",
+      "id": 7649605,
+      "avatar_url": "https://avatars.githubusercontent.com/u/17085448?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/baxterthehacker",
+      "html_url": "https://github.com/baxterthehacker",
+      "followers_url": "https://api.github.com/users/baxterthehacker/followers",
+      "following_url": "https://api.github.com/users/baxterthehacker/following{/other_user}",
+      "gists_url": "https://api.github.com/users/baxterthehacker/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/baxterthehacker/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/baxterthehacker/subscriptions",
+      "organizations_url": "https://api.github.com/users/baxterthehacker/orgs",
+      "repos_url": "https://api.github.com/users/baxterthehacker/repos",
+      "events_url": "https://api.github.com/users/baxterthehacker/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/baxterthehacker/received_events",
+      "type": "User",
+      "site_admin": false
+    }
+  },
+  "organization": {
+    "login": "baxterandthehackers",
+    "id": 4312013,
+    "url": "https://api.github.com/orgs/baxterandthehackers",
+    "repos_url": "https://api.github.com/orgs/baxterandthehackers/repos",
+    "events_url": "https://api.github.com/orgs/baxterandthehackers/events",
+    "hooks_url": "https://api.github.com/orgs/baxterandthehackers/hooks",
+    "issues_url": "https://api.github.com/orgs/baxterandthehackers/issues",
+    "members_url": "https://api.github.com/orgs/baxterandthehackers/members{/member}",
+    "public_members_url": "https://api.github.com/orgs/baxterandthehackers/public_members{/member}",
+    "avatar_url": "https://avatars.githubusercontent.com/u/4312013?v=3",
+    "description": ""
+  },
+  "sender":{
+    "login":"baxterthehacker",
+    "id":7649605,
+    "avatar_url":"https://avatars.githubusercontent.com/u/7649605?v=3",
+    "gravatar_id":"",
+    "url":"https://api.github.com/users/baxterthehacker",
+    "html_url":"https://github.com/baxterthehacker",
+    "followers_url":"https://api.github.com/users/baxterthehacker/followers",
+    "following_url":"https://api.github.com/users/baxterthehacker/following{/other_user}",
+    "gists_url":"https://api.github.com/users/baxterthehacker/gists{/gist_id}",
+    "starred_url":"https://api.github.com/users/baxterthehacker/starred{/owner}{/repo}",
+    "subscriptions_url":"https://api.github.com/users/baxterthehacker/subscriptions",
+    "organizations_url":"https://api.github.com/users/baxterthehacker/orgs",
+    "repos_url":"https://api.github.com/users/baxterthehacker/repos",
+    "events_url":"https://api.github.com/users/baxterthehacker/events{/privacy}",
+    "received_events_url":"https://api.github.com/users/baxterthehacker/received_events",
+    "type":"User",
+    "site_admin":true
+  }
+}
+ */
