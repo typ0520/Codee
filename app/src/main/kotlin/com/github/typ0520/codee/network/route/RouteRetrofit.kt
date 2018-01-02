@@ -1,7 +1,6 @@
 package com.github.typ0520.codee.network.route
 
 import com.github.typ0520.codee.network.Github
-import com.github.typ0520.codee.route.InnerInvocationHandler
 import retrofit2.Retrofit
 import java.lang.Class
 import java.lang.reflect.Method
